@@ -1,0 +1,119 @@
+{
+    "cnt": 3,
+    "list": [
+        {
+            "coord": {
+                "lon": 144.96,
+                "lat": -37.81
+            },
+            "sys": {
+                "country": "AU",
+                "timezone": 36000,
+                "sunrise": 1565126104,
+                "sunset": 1565163419
+            },
+            "weather": [
+                {
+                    "id": 803,
+                    "main": "Clouds",
+                    "description": "broken clouds",
+                    "icon": "04d"
+                }
+            ],
+            "main": {
+                "temp": 12.24,
+                "pressure": 1006,
+                "humidity": 58,
+                "temp_min": 10,
+                "temp_max": 13.33
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 3.6,
+                "deg": 40
+            },
+            "clouds": {
+                "all": 75
+            },
+            "dt": 1565158185,
+            "id": 2158177,
+            "name": "Melbourne"
+        },
+        {
+            "coord": {
+                "lon": 151.21,
+                "lat": -33.87
+            },
+            "sys": {
+                "country": "AU",
+                "timezone": 36000,
+                "sunrise": 1565124180,
+                "sunset": 1565162344
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "main": {
+                "temp": 21.37,
+                "pressure": 1009,
+                "humidity": 30,
+                "temp_min": 18.89,
+                "temp_max": 23
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 4.1,
+                "deg": 60
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1565158185,
+            "id": 2147714,
+            "name": "Sydney"
+        },
+        {
+            "coord": {
+                "lon": 153.03,
+                "lat": -27.47
+            },
+            "sys": {
+                "country": "AU",
+                "timezone": 36000,
+                "sunrise": 1565123131,
+                "sunset": 1565162520
+            },
+            "weather": [
+                {
+                    "id": 521,
+                    "main": "Rain",
+                    "description": "shower rain",
+                    "icon": "09d"
+                }
+            ],
+            "main": {
+                "temp": 19.08,
+                "pressure": 1014,
+                "humidity": 72,
+                "temp_min": 15.56,
+                "temp_max": 22
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 3.35,
+                "deg": 8.728
+            },
+            "clouds": {
+                "all": 75
+            },
+            "dt": 1565158185,
+            "id": 2174003,
+            "name": "Brisbane"
+        }
+    ]
+}
