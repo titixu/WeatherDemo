@@ -16,6 +16,7 @@ struct City: Codable {
         return weathers.first
     }
     
+    let coordinate: Coordinate
     let visibility: Int?
     let wind: Wind?
     let clouds: Clouds?
@@ -59,11 +60,17 @@ struct City: Codable {
     let snow: Snow?
     
     enum CodingKeys: String, CodingKey  {
+        case coordinate = "coord"
         case weathers = "weather"
         case visibility, wind, clouds
         case time = "dt"
         case id, name, sys, main, rain, snow
     }
+}
+
+struct Coordinate: Codable {
+    let lon: Double
+    let lat: Double
 }
 
 struct Rain: Codable {

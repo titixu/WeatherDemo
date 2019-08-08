@@ -11,6 +11,15 @@ import Foundation
 enum Units: String {
     case metric
     case imperial
+    
+    var symbol: String {
+        switch self {
+        case .metric:
+            return "℃"
+        default:
+            return "℉"
+        }
+    }
 }
 
 protocol APIConfig {
@@ -39,6 +48,7 @@ protocol APIClient {
     func urlForOneCityWeather(cityID: Int) -> URL
     func urlForCitiesWeather(cityIDs: [Int]) -> URL
     func urlForSearchCities(cityName: String) -> URL
+    func imageURL(id: String?) -> URL? // return image url for an image id
 }
 
 class API: APIClient {
@@ -49,6 +59,11 @@ class API: APIClient {
     
     let decoder = JSONDecoder.api
     let config = ProductionAPIConfig()
+    
+    func imageURL(id: String?) -> URL? {
+        guard let id = id else { return nil }
+        return URL(string: config.imageBaseURL + id + "@2x.png")
+    }
     
     func urlForOneCityWeather(cityID: Int) -> URL {
         let urlString = config.baseDataURL
@@ -79,9 +94,12 @@ class API: APIClient {
     }
     
     func urlForSearchCities(cityName: String) -> URL {
+        
+        let encodeString = cityName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)
+        
         let urlString = config.baseDataURL
             + config.version
-            + "/find?q=\(cityName)"
+            + "/find?q=\(encodeString ?? "")"
             + "&units=\(config.units.rawValue)"
             + "&appid=\(config.token)"
             + "&sort=population&cnt=30&type=like"
@@ -156,4 +174,5 @@ class API: APIClient {
         }.resume()
         
     }
+
 }
