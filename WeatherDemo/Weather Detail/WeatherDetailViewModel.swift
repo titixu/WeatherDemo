@@ -15,6 +15,8 @@ class WeatherDetailViewModel {
     let apiClient: APIClient
     var unitSystem: Units = .metric
     
+    var weatherGif: WeatherGif?
+    
     // busy loading API or finish loading
     var onLoad: ((Bool) -> Void)?
     // finsih with api loading
@@ -50,8 +52,12 @@ class WeatherDetailViewModel {
     }
     
     func imageURL() -> URL? {
-        guard let weather = city.weather?.main else { return nil }
+        if let weatherGif = weatherGif {
+            return URL(string: weatherGif.rawValue)!
+        }
         
+        guard let weather = city.weather?.main else { return nil }
+
         switch weather.lowercased() {
         case let main where main.contains("clear"):
             return URL(string: WeatherGif.clear.rawValue)!

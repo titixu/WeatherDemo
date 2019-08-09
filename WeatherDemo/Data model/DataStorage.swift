@@ -47,6 +47,8 @@ extension UserDefaults: CitiesStorage {
     }
     
     func appendCityId(id: Int) {
+        guard !cityIDs.contains(id) else { return }
+        
         var ids = cityIDs
         ids.append(id)
         set(ids, forKey: key)

@@ -30,6 +30,8 @@ class WeatherDetailViewController: UIViewController {
     @IBOutlet weak var windDirection: UILabel!
     @IBOutlet weak var cloud: UILabel!
     
+    @IBOutlet weak var detailContainerView: UIView!
+    
     @IBOutlet weak var sunrise: UILabel!
     @IBOutlet weak var sunset: UILabel!
     
@@ -66,6 +68,30 @@ class WeatherDetailViewController: UIViewController {
         }
         
         viewModel.updateCityWeather()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(changeWeatherBackground))
+        detailContainerView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc
+    private func changeWeatherBackground() {
+        let actionSheet = UIAlertController(title: "Change weather background", message: "Try out different weather background", preferredStyle: .alert)
+        
+        for weatherGif in WeatherGif.allCases {
+            let action =  UIAlertAction(title: weatherGif.name, style: .default, handler: { _ in
+                DispatchQueue.main.async {
+                    self.viewModel.weatherGif = weatherGif
+                    self.updateDetails()
+                }
+            })
+            actionSheet.addAction(action)
+            
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        actionSheet.addAction(cancel)
+        
+        present(actionSheet, animated: true, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
