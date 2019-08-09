@@ -185,3 +185,15 @@ class API: APIClient {
     }
 
 }
+
+enum WeatherGif: String {
+    case sunny = "http://giphygifs.s3.amazonaws.com/media/KV1s4kSJHaY3m/giphy.gif"
+    case rain = "https://media.giphy.com/media/gRnSZSRzOJeG4/giphy.gif"
+    case clear = "http://giphygifs.s3.amazonaws.com/media/u01ioCe6G8URG/giphy.gif"
+    case snow = "http://giphygifs.s3.amazonaws.com/media/7Bgpw7PwdxoDC/giphy.gif"
+    case clouds = "https://media.giphy.com/media/lOkbL3MJnEtHi/giphy.gif"
+    case mist = "https://media.giphy.com/media/Yz65LVuvXFQUo/giphy.gif"
+    case haze = "https://media.giphy.com/media/7twRA3tODfwt2/giphy.gif"
+    case fog = "https://media.giphy.com/media/cIsHRed0PxHhmGx1Gn/giphy.gif"
+    case sand = "https://media.giphy.com/media/EaVouuqujYqiI/giphy.gif"
+}

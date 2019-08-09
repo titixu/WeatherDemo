@@ -42,6 +42,7 @@ class WeatherViewController: UITableViewController {
             }
         }
         
+        viewModel.fetchWeather()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,7 +87,7 @@ extension WeatherViewController {
     
         // TODO: change to cell view model
         let city = viewModel.city(at: indexPath)
-        cell.cityNameLabel.text = city.name + " " + city.country
+        cell.cityNameLabel.text = viewModel.cityName(for: city)
         cell.weatherLabel.text = city.weather?.description
         cell.tempertureLabel.text = viewModel.tempertureString(for: city)
         cell.tempertureHighLabel.text = viewModel.tempertureHighString(for: city)

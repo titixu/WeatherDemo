@@ -70,6 +70,10 @@ extension CitiesWeatherListViewModel {
         return cities[indexPath.row]
     }
     
+    func cityName(for city: City) -> String {
+        return  city.name + " " + city.country
+    }
+    
     func tempertureString(for city: City) -> String {
         return "\(city.temperature)\(unitSystem.symbol)"
     }

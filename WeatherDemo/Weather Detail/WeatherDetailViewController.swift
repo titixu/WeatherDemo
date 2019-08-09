@@ -18,7 +18,7 @@ class WeatherDetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var cityName: UILabel!
-    @IBOutlet weak var weatherIcon: UIImageView!
+    @IBOutlet weak var weatherIcon: SDAnimatedImageView!
     @IBOutlet weak var weatherDescription: UILabel!
     
     @IBOutlet weak var temperature: UILabel!
@@ -65,7 +65,7 @@ class WeatherDetailViewController: UIViewController {
             }
         }
         
-        updateDetails()
+        viewModel.updateCityWeather()
     }
     
     override func viewDidAppear(_ animated: Bool) {

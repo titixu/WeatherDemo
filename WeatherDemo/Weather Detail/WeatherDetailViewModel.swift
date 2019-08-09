@@ -50,7 +50,39 @@ class WeatherDetailViewModel {
     }
     
     func imageURL() -> URL? {
-        return apiClient.imageURL(id: city.weather?.icon)
+        guard let weather = city.weather?.main else { return nil }
+        
+        switch weather.lowercased() {
+        case let main where main.contains("clear"):
+            return URL(string: WeatherGif.clear.rawValue)!
+        
+        case let main where main.contains("sun"):
+            return URL(string: WeatherGif.sunny.rawValue)!
+            
+        case let main where main.contains("rain"):
+            return URL(string: WeatherGif.rain.rawValue)!
+            
+        case let main where main.contains("snow"):
+            return URL(string: WeatherGif.snow.rawValue)!
+            
+        case let main where main.contains("clouds"):
+            return URL(string: WeatherGif.clouds.rawValue)!
+            
+        case let main where main.contains("mist"):
+            return URL(string: WeatherGif.mist.rawValue)!
+            
+        case let main where main.contains("haze"):
+            return URL(string: WeatherGif.haze.rawValue)!
+            
+        case let main where main.contains("fog"):
+            return URL(string: WeatherGif.fog.rawValue)!
+            
+        case let main where main.contains("sand"):
+            return URL(string: WeatherGif.sand.rawValue)!
+            
+        default:
+            return apiClient.imageURL(id: city.weather?.icon)
+        }
     }
     
     func tempertureString() -> String {
