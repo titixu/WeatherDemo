@@ -20,6 +20,15 @@ enum Units: String {
             return "℉"
         }
     }
+    
+    var windSpeepd: String {
+        switch self {
+        case .metric:
+            return "meter/sec"
+        default:
+            return "miles/hour"
+        }
+    }
 }
 
 protocol APIConfig {

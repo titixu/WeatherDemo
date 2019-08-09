@@ -24,7 +24,7 @@ class CitiesWeatherListViewModel {
     init(storage: CitiesStorage, apiClient: APIClient) {
         self.storage = storage
         self.apiClient = apiClient
-        Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { [weak self] _ in
             guard let self = self else { return }
             self.fetchWeather()
         }

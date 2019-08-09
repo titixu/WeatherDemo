@@ -13,7 +13,7 @@ class WeatherViewController: UITableViewController {
     private let cellIdentifier = "CityWeatherCell"
 
     let viewModel = CitiesWeatherListViewModel(storage: UserDefaults.standard, apiClient: API())
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,7 +42,6 @@ class WeatherViewController: UITableViewController {
             }
         }
         
-        viewModel.fetchWeather()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +52,17 @@ class WeatherViewController: UITableViewController {
     @objc
     func pullToRefresh() {
         viewModel.fetchWeather()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail",
+            let indexPath = tableView.indexPathForSelectedRow,
+            let destinationViewController = segue.destination as? WeatherDetailViewController
+        {
+            let city = viewModel.city(at: indexPath)
+            let weatherDetailViewModel = WeatherDetailViewModel(city: city, apiClient: viewModel.apiClient)
+            destinationViewController.viewModel = weatherDetailViewModel
+        }
     }
 
 }
@@ -87,7 +97,6 @@ extension WeatherViewController {
         return cell
     }
 }
-
 
 // MARK: - Table View Delegate
 extension WeatherViewController {

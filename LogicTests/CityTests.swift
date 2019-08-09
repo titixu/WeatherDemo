@@ -123,4 +123,26 @@ class SearchListTest: XCTestCase {
         XCTAssertEqual(city.time, Date(timeIntervalSinceReferenceDate: 1565161898))
     }
     
+    
+    func testSearchListHeYuan() {
+        let data = loadFile(name: "searchHeYuan", ext: "json")
+        let searchlist = try! JSONDecoder.api.decode(SearchList.self, from: data)
+        XCTAssertEqual(searchlist.count, 3)
+        XCTAssertEqual(searchlist.message, "like")
+        
+        // test first city in the list
+        let city = searchlist.list.first!
+        XCTAssertEqual(city.weather!.main, "Clear")
+        XCTAssertEqual(city.weather!.description, "clear sky")
+        XCTAssertEqual(city.country, "CN")
+        XCTAssertNil(city.sunrise)
+        XCTAssertNil(city.sunset)
+        XCTAssertEqual(city.id, 1786112)
+        XCTAssertEqual(city.name, "Heyuan")
+        XCTAssertEqual(city.wind!.speed, 2.21)
+        XCTAssertEqual(city.wind!.degrees, 331.17)
+        XCTAssertNil(city.visibility)
+        XCTAssertEqual(city.clouds!.cloudinessPercentage, 0)
+        XCTAssertEqual(city.time, Date(timeIntervalSinceReferenceDate: 1565313129))
+    }
 }

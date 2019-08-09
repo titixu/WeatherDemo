@@ -1,0 +1,121 @@
+{
+    "message": "like",
+    "cod": "200",
+    "count": 3,
+    "list": [
+        {
+            "id": 1786112,
+            "name": "Heyuan",
+            "coord": {
+                "lat": 23.738,
+                "lon": 114.692
+            },
+            "main": {
+                "temp": 28.44,
+                "pressure": 998.09,
+                "humidity": 75,
+                "temp_min": 28.44,
+                "temp_max": 28.44,
+                "sea_level": 998.09,
+                "grnd_level": 964.36
+            },
+            "dt": 1565313129,
+            "wind": {
+                "speed": 2.21,
+                "deg": 331.17
+            },
+            "sys": {
+                "country": "CN"
+            },
+            "rain": null,
+            "snow": null,
+            "clouds": {
+                "all": 0
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ]
+        },
+        {
+            "id": 1280008,
+            "name": "Heyuan",
+            "coord": {
+                "lat": 24.6952,
+                "lon": 99.1239
+            },
+            "main": {
+                "temp": 17.89,
+                "pressure": 1007.09,
+                "humidity": 95,
+                "temp_min": 17.89,
+                "temp_max": 17.89,
+                "sea_level": 1007.09,
+                "grnd_level": 831.14
+            },
+            "dt": 1565312980,
+            "wind": {
+                "speed": 1.35,
+                "deg": 328.008
+            },
+            "sys": {
+                "country": "CN"
+            },
+            "rain": null,
+            "snow": null,
+            "clouds": {
+                "all": 97
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04d"
+                }
+            ]
+        },
+        {
+            "id": 7739107,
+            "name": "Heyuan",
+            "coord": {
+                "lat": 27.9952,
+                "lon": 116.9525
+            },
+            "main": {
+                "temp": 29.05,
+                "pressure": 998.11,
+                "humidity": 75,
+                "temp_min": 29.05,
+                "temp_max": 29.05,
+                "sea_level": 998.11,
+                "grnd_level": 992.01
+            },
+            "dt": 1565313132,
+            "wind": {
+                "speed": 4.52,
+                "deg": 12.87
+            },
+            "sys": {
+                "country": "CN"
+            },
+            "rain": null,
+            "snow": null,
+            "clouds": {
+                "all": 0
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ]
+        }
+    ]
+}

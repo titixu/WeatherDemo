@@ -40,7 +40,7 @@ struct City: Codable {
         return main.temp
     }
     
-    var pressure: Int? {
+    var pressure: Double? {
         return main.pressure
     }
     
@@ -102,7 +102,7 @@ private struct Sys: Codable {
 
 private struct Main: Codable {
     let temp: Double
-    let pressure: Int?
+    let pressure: Double?
     let humidity: Int?
     let tempMin: Double
     let tempMax: Double
